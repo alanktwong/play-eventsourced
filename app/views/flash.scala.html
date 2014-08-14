@@ -1,11 +1,11 @@
-@()(implicit flash: Flash, lang: Lang)
+@()(implicit context: ViewContext)
 
-@info = @{ flash.get("info") }
-
-@info match {
-	case Some(message) => {
-		<div class="alert alert-success"><button class="close" data-dismiss="alert">×</button>@message</div>
-	}
-	case None => {
+@defining(context.flash) { flash =>
+	@flash.get("info") match {
+		case Some(message) => {
+			<div class="alert alert-success"><button class="close" data-dismiss="alert">×</button>@message</div>
+		}
+		case None => {
+		}
 	}
 }

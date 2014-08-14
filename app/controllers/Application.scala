@@ -5,7 +5,7 @@ import play.api.mvc._
 
 
 class Application extends BaseController {
-	def index = Action { implicit request =>
+	def index = ViewContextAction { implicit contet =>
 		Ok(views.html.index("Hi!","Your new application is ready."))
 	}
 }
