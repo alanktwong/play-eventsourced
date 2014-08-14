@@ -1,9 +1,10 @@
-package test
+package functional
 
 import org.specs2.mutable._
-
 import play.api.test._
 import play.api.test.Helpers._
+import org.junit.runner.RunWith
+import org.specs2.runner.JUnitRunner
 
 /**
  * add your integration spec here.

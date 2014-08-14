@@ -1,22 +1,25 @@
-package test
+package functional
 
 import org.specs2.mutable._
-
 import play.api.test._
 import play.api.test.Helpers._
+
+import org.junit.runner.RunWith
+import org.specs2.runner.JUnitRunner
 
 /**
  * Add your spec here.
  * You can mock out a whole application including requests, plugins etc.
  * For more information, consult the wiki.
  */
+@RunWith(classOf[JUnitRunner])
 class ApplicationSpec extends Specification {
 	
 	"Application" should {
 		
 		"send 404 on a bad request" in {
 			running(FakeApplication()) {
-				route(FakeRequest(GET, "/boum")) must beNone				
+				route(FakeRequest(GET, "/boum")) must beNone
 			}
 		}
 		

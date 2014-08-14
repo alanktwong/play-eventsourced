@@ -31,14 +31,12 @@ object Resolvers {
 object Versions {
   lazy val scalaVer  = "2.10.4"
   lazy val akkaVer   = "2.1.0"
-  lazy val springVer = "3.1.2.RELEASE"
+  lazy val springVer = "3.2.2.RELEASE"
 
   lazy val playVer       = play.core.PlayVersion.current
   lazy val junitVer      = "4.10"
-  lazy val junitVer      = "4.10"
   lazy val scalaTestVer  = "2.1.0"
   lazy val scalaCheckVer = "1.10.1"
-  lazy val scalazVer     = "7.0.0"
   lazy val scalazVer     = "7.0.0"
   lazy val scalaStmVer   = "0.6"
 
@@ -82,7 +80,6 @@ object Dependencies {
   lazy val springTxn            = springOrg           % "org.springframework.transaction" % springVer
   lazy val springOrm            = springOrg           % "org.springframework.orm"         % springVer
   lazy val springScala          = springScalaOrg      % "spring-scala"                    % "1.0.0.M2"
-  
   lazy val springDependencies   = Seq(javaxInject, springBeans, springCore, springContext, springScala)
 
   lazy val rxScala        = "com.netflix.rxjava"     %  "rxjava-scala"   % "0.14.6"
