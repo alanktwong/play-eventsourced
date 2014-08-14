@@ -101,9 +101,12 @@ object ApplicationBuild extends Build {
   lazy val appDependencies = Seq(jdbc, anorm) ++ basicDependencies
 
   lazy val main = play.Project(appName, appVersion, appDependencies).settings(
-    // Add your own project settings here
     scalaVersion := scalaVer,
-    resolvers ++= allResolvers
-  )
+    resolvers ++= allResolvers,
+    scalacOptions := Seq("-deprecation", "-unchecked", "-Ywarn-value-discard", "-Ywarn-adapted-args"),
+
+    lessEntryPoints <<= (sourceDirectory in Compile)(base => (
+      (base / "assets" / "stylesheets" / "bootstrap" / "bootstrap.less") +++
+      (base / "assets" / "stylesheets" / "bootstrap" / "responsive.less"))))
 
 }

@@ -1,7 +1,6 @@
-@(message: String)
+@(title: String, message: String)(implicit flash: Flash, lang: Lang)
 
-@main("Welcome to Play 2.1") {
-    
-    @play20.welcome(message)
-    
+@main(title) {
+	<h2>@message</h2>
+	<p class="alert alert-info">Click <a href="@routes.Application.index">here</a> to see the current content.</p>
 }
