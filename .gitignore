@@ -18,3 +18,6 @@ project/plugins/project/
 .settings
 /.target
 /bin
+.classpath
+.project
+.cache
